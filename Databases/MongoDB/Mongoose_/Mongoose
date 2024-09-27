@@ -1,0 +1,15 @@
+A library that creates a connection b/w MongoDB and the Node.js
+It is the ODM library (Object Document library)
+
+
+
+A JavaScript object modeling tool: Mongoose is a 
+popular library used in Node.js applications that 
+provides a straightforward way to interact with
+ MongoDB databases. It helps in defining data 
+ structures (schemas), validating data, and performing
+  CRUD (Create, Read, Update, Delete) operations on
+MongoDB collections.
+
+
+Mongoose uses Operation Buffering

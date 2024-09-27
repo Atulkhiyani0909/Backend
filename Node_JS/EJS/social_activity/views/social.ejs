@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Profile</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="profile-container">
+       
+        <div class="profile-info">
+            <h2><b>Username :</b> <i><%= user.username %></i> </h2>
+            <p><b>Name :</b> <%= user.first_name %></p>
+            <p><b>email id :</b> <%= user.email %></p>
+            <p> <b>Bio :</b><%= user.bio %></p>
+            <div class="profile-actions">
+                
+                <span><b>Followers:</b> <%= user.followers %></span>&nbsp;&nbsp;
+                <span><b>Following: </b><%= user.following %></span><br><br>
+                <button onclick="followUser()">Follow</button>
+               
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+<script src="/first.js"></script>
+</html>
+<!-- NOTE -->
+<!-- we can use includes learn about it -->

@@ -1,0 +1,25 @@
+If we have 4 workers and if all they are busy and we have used all blocking 
+operations than the code stops working because all our workers are busy 
+So it is good to use the non blocking operations in the code 
+
+
+Sync is the blocking operation while Async is the non-blocking operation
+
+Example
+
+Sync -> this will execute from the top the bottom and 2 will not print the read file is completed.
+console.lg(1);
+fs.readfileSync();
+console.lg(2);
+
+Async -> this will complete all the task till file read is working and when its result is ready than it will print that for us.
+console.lg(1);
+fs.readfileSync();
+console.lg(2);
+console.lg(4);
+
+that is why non blocking operation are good to use
+
+
+const os=require("os");//this will give the info of our opersting system
+ console.log(os.cpus().length);// I have 12 threads

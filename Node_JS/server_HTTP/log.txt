@@ -1,0 +1,8 @@
+02-09-2024, 19:36:27,/,GET
+02-09-2024, 19:36:27,/favicon.ico,GET
+02-09-2024, 19:36:50,/about?name=ak,GET
+02-09-2024, 19:36:50,/favicon.ico,GET
+02-09-2024, 19:38:52,/about?myname=ak,GET
+02-09-2024, 19:38:52,/favicon.ico,GET
+02-09-2024, 19:46:36,/,GET
+02-09-2024, 19:46:37,/favicon.ico,GET

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Home Page</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <main>
+         <h3><%=`Dice value is ${random} `%></h3>
+         <!-- Getting out data from the index.js file -->
+        <section> 
+            <h2>About Me</h2>
+            <p>This is a simple home page to showcase some basic HTML and CSS elements.</p>
+        </section>
+
+        <section>
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Email: your_email@example.com</li>
+                <li>Phone: +1 234 567 8901</li>
+                <li>Address: Your Address</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2023 Your Name
+    </footer>
+</body>
+</html>

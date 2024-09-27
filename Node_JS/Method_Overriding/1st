@@ -1,0 +1,9 @@
+html forms can not send patch putor delete request but this can be 
+done by the method-overriding package it helps to send the 
+patch put and delete request .
+
+
+npm i method-override
+read doccumentation on the express
+
+to delete something from the arr in js use filter method

@@ -1,0 +1,100 @@
+// Create DB
+//use blog  this creates the new db of blog 
+
+//Making the collection in DB
+db.createCollection("post")
+
+
+//Insertion in the MongoDB
+
+//Insert One 
+
+db.posts.insertOne({
+  category: "News",
+  likes: 1,
+  tags: ["news", "events"],
+  date: Date()
+})
+
+
+//Insert Many
+
+db.posts.insertMany([  
+  {
+    title: "Post Title 2",
+    body: "Body of post.",
+    category: "Event",
+    likes: 2,
+    tags: ["news", "events"],
+    date: Date()
+  },
+  {
+    title: "Post Title 3",
+    body: "Body of post.",
+    category: "Technology",
+    likes: 3,
+    tags: ["news", "events"],
+    date: Date()
+  },
+  {
+    title: "Post Title 4",
+    body: "Body of post.",
+    category: "Event",
+    likes: 4,
+    tags: ["news", "events"],
+    date: Date()
+  }
+])
+
+
+//to print all
+db.posts.find()
+
+//Find in DB
+db.posts.find({key:value});
+
+
+//Find in DB it will give only one data from db
+db.posts.findOne({key:value});
+
+//Operators in find() 
+//  many more....
+
+// $eq: Values are equal
+// $ne: Values are not equal
+// $gt: Value is greater than another value
+// $gte: Value is greater than or equal to another value
+// $lt: Value is less than another value
+// $lte: Value is less than or equal to another value
+// $in: Value is matched within an array
+
+
+// $and: Returns documents where both queries match
+// $or: Returns documents where either query matches
+// $nor: Returns documents where both queries fail to match
+// $not: Returns documents where the query does not match
+
+db.posts.find({likes:{$gt:90}}) //this is where likes is greater than 90
+db.posts.find({likes:{$gte:90}})//greater than equal to
+db.posts.find({title:{$in:["sports","cars"]}})//find that title is in our passed array
+db.posts,find({or:[{likes:{$gt:75}},{title:"Motors"}]})
+
+
+//Update in DB
+db.post.updateOne({title:"motors"},{$set:{like:1001}})
+db.post.updateMany({title:"cars"},{$set:{title:"motor"}})
+db.post.replaceOne({title:"elections"},{title:"chunav",winner:"BJP",PM:"Modi"})//this will completely change the Election title with our new document
+
+// $addToSet: Adds distinct elements to an array
+// $pop: Removes the first or last element of an array
+// $pull: Removes all elements from an array that match the query
+// $push: Adds an element to an array
+
+
+///DELETE in DB
+db.post.deleteOne({title:"News"})//delete one post with title news
+db.post.deleteMany({likes:{$gt:100}})//delete all post with like greater than 100
+db.dropDatabase()// to delete database
+db.post.deleteMany()// like this delete all data from DB
+
+
