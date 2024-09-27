@@ -39,6 +39,9 @@ app.use((req,res,next)=>{
             }
             });
 
+
+
+
         app.get("/api",(req,res)=>{
             res.send("This is your data");
             });
@@ -69,17 +72,22 @@ app.get('/',(req,res)=>{
     });
 
 
-//Error handling middleware
-    //for the request to undefined path 404
-app.use((req,res)=>{
-    res.status(404).send("This the undefined path 404");
-  
-    });
+
 
 
 //Error handling default express 
 // throw new Error("This is the error");  to give our own error
+app.use((err,req,res,next)=>{
+    console.log("this is the error middleware");
+    next(err);//this means that next we are calling the default error handling middleware
+});
 
+//Error handling middleware
+   // for the request to undefined path 404
+    app.use((req,res)=>{
+        res.status(404).send("This the undefined path 404");
+      
+        });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
