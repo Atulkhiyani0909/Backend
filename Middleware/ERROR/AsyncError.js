@@ -18,7 +18,7 @@ app.get("/chat/:id", async(req,res,next)=>{
   
   //now using try & catch
   //this is like we making the validation error from the client side to handle
-  
+  //example - user is not submmit any data in form but is required in our DB schema 
   app.post("/chat", async(req,res,next)=>{
       try{
           let {from,to,message} = req.body;
@@ -33,13 +33,13 @@ app.get("/chat/:id", async(req,res,next)=>{
   
   
   //to better than try & catch we use 
-  //wrapAsync function
+  //wrapAsync function asyncWrap
   //combination of 3 functions
   //write it above the routes
   // to wrap the callback function
   function asyncWrap(fn){
       return function(req,res,next){
-          fn(req,res,next).catch(err=>next(err));
+          fn(req,res,next).catch(err=>next(err));//in built catch for handling the error 
       }
   }
   
@@ -55,7 +55,7 @@ app.get("/chat/:id", async(req,res,next)=>{
   }));    
   
   
-  //this is the very helpfull asyncWrap function catch is also included in it it catch the error
+  //this is the very helpfull asyncWrap function catch is also included in  it catch the error
   // we can use it for all the async functions
   
 
