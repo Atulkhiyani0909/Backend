@@ -56,19 +56,31 @@ const customerSchema = new mongoose.Schema({//one to many relationship
 
 const Customer=mongoose.model('Customer',customerSchema);
 
-const addCustomer=async()=>{
-    let cust1=new Customer({
-        name:'John Doe',
-        email:'john@gmail.com',
+// const addCustomer=async()=>{
+//     let cust1=new Customer({
+//         name:'John Doe',
+//         email:'john@gmail.com',
         
-})
-//taking out the order from the order collection and storing in the customer collection
-let order1=await Order.findOne({item:'Burger'});
-let order2=await Order.findOne({item:'Pizza'});
-cust1.orders.push(order1,order2);
-let result=await cust1.save();
-console.log(result);
+// })
+// //taking out the order from the order collection and storing in the customer collection
+// let order1=await Order.findOne({item:'Burger'});
+// let order2=await Order.findOne({item:'Pizza'});
+// cust1.orders.push(order1,order2);
+// let result=await cust1.save();
+// console.log(result);
+// }
+
+
+//addCustomer();
+
+
+
+
+//Using populate
+//this will give the orders of the customer not the id's but the orders details
+const findcustomer=async()=>{
+let result =await Customer.find().populate('orders');//we use .populate to get the details of the orders from the orders collection
+console.log(result[0]);//by this we get the details of the orders
 }
 
-
-addCustomer();
+findcustomer();
