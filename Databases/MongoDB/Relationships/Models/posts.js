@@ -31,35 +31,35 @@ const PostSchema=new mongoose.Schema({
 const   endUser=mongoose.model('endUser',endUserSchema);
 const Post=mongoose.model('post',PostSchema);
 
-// const  adddata=async()=>{
+const  adddata=async()=>{
 
-//     //creating a new user
-//         let newendUser=new endUser({
-//         username:'Soham',
-//         email:'soham@gmail.com',
-//         age:26
-//     });
-
-
-//     // let user=await endUser.findOne({username:'Rahul'}); 
-
-//     //creating a new post
-//     // let post=new Post({
-//     //     content:'hello',
-//     //     likes:189,
-//     // });
+    //creating a new user
+        let newendUser=new endUser({
+        username:'Soham',
+        email:'soham@gmail.com',
+        age:26
+    });
 
 
-//     let post=new Post({
-//         content:'Goodbye',
-//         likes:18,
-//     });
-//     //saving the user and the post
-//     let result=await newendUser.save();
-//     post.user=newendUser;//this is the reference to the user this is how we are linking the user to the post
-//     let result2=await post.save();
-//     console.log(result2,result);
-// }
+    let user=await endUser.findOne({username:'Rahul'}); 
+
+    //creating a new post
+    // let post=new Post({
+    //     content:'hello',
+    //     likes:189,
+    // });
+
+
+    let post=new Post({
+        content:'Goodbye',
+        likes:18,
+    });
+    //saving the user and the post
+    let result=await newendUser.save();
+    post.user=newendUser;//this is the reference to the user this is how we are linking the user to the post
+    let result2=await post.save();
+    console.log(result2,result);
+}
 
 //adddata();
 
